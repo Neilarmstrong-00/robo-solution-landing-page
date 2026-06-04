@@ -3,6 +3,7 @@ import { motion, useMotionValue, useSpring } from 'framer-motion';
 
 export default function CustomCursor() {
   const [isBig, setIsBig] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
   
@@ -13,6 +14,12 @@ export default function CustomCursor() {
   const cursorRySpring = useSpring(cursorY, { damping: 15, stiffness: 100, mass: 1 });
 
   useEffect(() => {
+    // Check if device is mobile or touch-based
+    if (window.innerWidth < 768 || window.matchMedia('(pointer: coarse)').matches) {
+      setIsMobile(true);
+      return; // Don't attach listeners
+    }
+
     const moveCursor = (e) => {
       cursorX.set(e.clientX);
       cursorY.set(e.clientY);
@@ -40,7 +47,9 @@ export default function CustomCursor() {
       window.removeEventListener('mousemove', moveCursor);
       window.removeEventListener('mouseover', handleMouseOver);
     };
-  }, []);
+  }, [cursorX, cursorY]);
+
+  if (isMobile) return null;
 
   return (
     <>

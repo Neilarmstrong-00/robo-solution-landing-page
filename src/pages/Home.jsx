@@ -52,7 +52,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
             className="hero-h1"
-            style={{ fontFamily: 'var(--font-h)', fontWeight: 800, fontSize: 'clamp(1.8rem,13vw,9rem)', lineHeight: .92, letterSpacing: '-.04em', marginBottom: '1.75rem' }}
+            style={{ fontFamily: 'var(--font-h)', fontWeight: 800, lineHeight: .92, letterSpacing: '-.04em', marginBottom: '1.75rem' }}
           >
             Engineering<br />
             <em style={{ fontStyle: 'normal', color: 'transparent', WebkitTextStroke: '1.5px rgba(244,244,246,.22)' }}>Smart Solutions</em><br />
@@ -106,9 +106,10 @@ export default function Home() {
         @keyframes float-up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes float-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
         @keyframes hero-breathe { 0%, 100% { opacity: 0.9; } 50% { opacity: 1; } }
+        .hero-h1 { font-size: clamp(2rem, 13vw, 9rem); word-wrap: break-word; overflow-wrap: break-word; hyphens: auto; }
         @media(max-width: 768px) {
           #hero { min-height: 85vh !important; justify-content: flex-start !important; padding-top: 130px !important; }
-          .hero-h1 { font-size: clamp(1.8rem, 11vw, 4rem) !important; }
+          .hero-h1 { font-size: clamp(1.4rem, 8vw, 3rem) !important; }
           .hero-h1 em { color: var(--accent) !important; -webkit-text-stroke: 0px !important; }
         }
       `}</style>

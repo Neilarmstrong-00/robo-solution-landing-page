@@ -130,6 +130,7 @@ export default function About() {
             style={{ overflowX: 'auto', WebkitOverflowScrolling: 'touch', margin: '0 calc(-1 * clamp(1.5rem,4vw,3.5rem))', paddingBottom: '1rem', scrollSnapType: 'x mandatory' }}
           >
             <div 
+              className="team-carousel-inner"
               style={{ display: 'flex', gap: '1.25rem', padding: '0 clamp(1.5rem,4vw,3.5rem)', width: 'max-content' }}
             >
               {[
@@ -193,6 +194,17 @@ export default function About() {
         .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
         
         @media(max-width: 900px) { .about-wrap { grid-template-columns: 1fr; } .about-sticky { position: static; } }
+        @media(max-width: 768px) {
+          .team-carousel-outer { overflow: visible !important; margin: 0 !important; scroll-snap-type: none !important; }
+          .team-carousel-inner { flex-wrap: wrap; width: 100% !important; justify-content: center; padding: 0 !important; display: grid !important; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important; }
+          .team-card { width: 100% !important; }
+          .team-drag-hint { display: none !important; }
+          .popup-modal-content { max-height: 95vh !important; flex-direction: column !important; }
+          .popup-modal-img { min-height: 140px !important; flex: none !important; height: 160px !important; }
+          .popup-modal-text { padding: 1.25rem !important; flex: none !important; }
+          .popup-modal-h3 { font-size: 1.5rem !important; margin-bottom: 0.75rem !important; }
+          .popup-modal-desc { font-size: 0.82rem !important; margin-bottom: 1rem !important; line-height: 1.5 !important; }
+        }
       `}</style>
       
       <AnimatePresence>
@@ -211,23 +223,24 @@ export default function About() {
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
               onClick={(e) => e.stopPropagation()}
-              style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 24, width: '100%', maxWidth: 850, maxHeight: '90vh', overflowY: 'auto', overflowX: 'hidden', display: 'flex', flexDirection: window.innerWidth < 768 ? 'column' : 'row' }}
+              className="popup-modal-content"
+              style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 24, width: '100%', maxWidth: 850, maxHeight: '90vh', overflowY: 'auto', overflowX: 'hidden', display: 'flex', flexDirection: 'row' }}
             >
-              <div style={{ flex: '1.2', minHeight: 250, background: '#000', position: 'relative' }}>
+              <div className="popup-modal-img" style={{ flex: '1.2', minHeight: 250, background: '#000', position: 'relative' }}>
                 <img src={selectedMember.image} alt={selectedMember.name} style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.9 }} />
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, transparent 50%, var(--card) 100%)', opacity: window.innerWidth < 768 ? 0 : 1 }}></div>
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, transparent 50%, var(--card) 100%)', opacity: window.innerWidth < 768 ? 1 : 0 }}></div>
               </div>
-              <div style={{ flex: '1.2', padding: '2.5rem 2rem', display: 'flex', flexDirection: 'column', position: 'relative' }}>
+              <div className="popup-modal-text" style={{ flex: '1.2', padding: '2.5rem 2rem', display: 'flex', flexDirection: 'column', position: 'relative' }}>
                 <button 
                   onClick={() => setSelectedMember(null)}
-                  style={{ position: 'absolute', top: '1.5rem', right: '1.5rem', background: 'rgba(255,255,255,0.05)', border: 'none', color: 'var(--muted)', width: 32, height: 32, borderRadius: '50%', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                  style={{ position: 'absolute', top: '1rem', right: '1rem', background: 'rgba(255,255,255,0.05)', border: 'none', color: 'var(--muted)', width: 32, height: 32, borderRadius: '50%', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 10 }}
                 >
                   ✕
                 </button>
                 <div style={{ fontSize: '.75rem', fontWeight: 600, letterSpacing: '.15em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: '.5rem' }}>{selectedMember.role}</div>
-                <h3 style={{ fontFamily: 'var(--font-h)', fontWeight: 800, fontSize: 'clamp(1.8rem,3vw,2.4rem)', lineHeight: 1.1, letterSpacing: '-.03em', marginBottom: '1.5rem', color: 'var(--white)', whiteSpace: selectedMember.name.includes('Nilove') ? 'nowrap' : 'normal' }}>{selectedMember.name}</h3>
-                <p style={{ fontSize: '.95rem', fontWeight: 300, color: 'var(--muted2)', lineHeight: 1.7, marginBottom: '2rem' }}>{selectedMember.desc}</p>
+                <h3 className="popup-modal-h3" style={{ fontFamily: 'var(--font-h)', fontWeight: 800, fontSize: 'clamp(1.8rem,3vw,2.4rem)', lineHeight: 1.1, letterSpacing: '-.03em', marginBottom: '1.5rem', color: 'var(--white)', whiteSpace: selectedMember.name.includes('Nilove') ? 'nowrap' : 'normal' }}>{selectedMember.name}</h3>
+                <p className="popup-modal-desc" style={{ fontSize: '.95rem', fontWeight: 300, color: 'var(--muted2)', lineHeight: 1.7, marginBottom: '2rem' }}>{selectedMember.desc}</p>
                 
                 <div style={{ marginTop: 'auto', display: 'flex', flexDirection: 'column', gap: '1rem', borderTop: '1px solid var(--border)', paddingTop: '1.5rem' }}>
                   {selectedMember.email && (

@@ -177,6 +177,14 @@ export default function Portfolio() {
         .proj-link { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 36px; padding: 0 16px; border-radius: 999px; border: 1px solid var(--border2); font-size: .75rem; font-weight: 500; color: var(--white); transition: border-color .2s, background .2s; }
         .proj-link:hover { border-color: var(--accent); background: rgba(232,255,71,.04); }
         .proj-card-wrap:hover .proj-visual-glow { opacity: 1 !important; }
+
+        @media(max-width: 768px) {
+          .popup-modal-content { max-height: 95vh !important; flex-direction: column !important; }
+          .popup-modal-img { min-height: 180px !important; flex: none !important; height: 200px !important; }
+          .popup-modal-text { padding: 1.25rem !important; flex: none !important; }
+          .popup-modal-h3 { font-size: 1.4rem !important; margin-bottom: 0.75rem !important; }
+          .popup-modal-desc { font-size: 0.85rem !important; margin-bottom: 1rem !important; line-height: 1.5 !important; }
+        }
       `}</style>
 
       <AnimatePresence>
@@ -195,9 +203,10 @@ export default function Portfolio() {
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
               onClick={(e) => e.stopPropagation()}
-              style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 24, width: '100%', maxWidth: 900, maxHeight: '90vh', overflowY: 'auto', overflowX: 'hidden', display: 'flex', flexDirection: window.innerWidth < 768 ? 'column' : 'row' }}
+              className="popup-modal-content"
+              style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 24, width: '100%', maxWidth: 900, maxHeight: '90vh', overflowY: 'auto', overflowX: 'hidden', display: 'flex', flexDirection: 'row' }}
             >
-              <div style={{ flex: '1.2', minHeight: 300, background: '#000', position: 'relative', overflow: 'hidden' }}>
+              <div className="popup-modal-img" style={{ flex: '1.2', minHeight: 300, background: '#000', position: 'relative', overflow: 'hidden' }}>
                 {!isModalTransparent && (
                   <div style={{ position: 'absolute', inset: 0, backgroundColor: modalColor, zIndex: 0 }} />
                 )}
@@ -229,15 +238,13 @@ export default function Portfolio() {
                   )}
                 </div>
                 
-                {/* Mute indicator overlay removed per request */}
-                
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, transparent 50%, var(--card) 100%)', opacity: window.innerWidth < 768 ? 0 : 1, pointerEvents: 'none' }}></div>
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, transparent 50%, var(--card) 100%)', opacity: window.innerWidth < 768 ? 1 : 0, pointerEvents: 'none' }}></div>
               </div>
-              <div style={{ flex: '1', padding: 'clamp(2rem, 4vw, 3rem)', display: 'flex', flexDirection: 'column', position: 'relative' }}>
+              <div className="popup-modal-text" style={{ flex: '1', padding: 'clamp(2rem, 4vw, 3rem)', display: 'flex', flexDirection: 'column', position: 'relative' }}>
                 <button 
                   onClick={() => setSelectedProject(null)}
-                  style={{ position: 'absolute', top: '1.5rem', right: '1.5rem', background: 'rgba(255,255,255,0.05)', border: 'none', color: 'var(--muted)', width: 32, height: 32, borderRadius: '50%', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                  style={{ position: 'absolute', top: '1rem', right: '1rem', background: 'rgba(255,255,255,0.05)', border: 'none', color: 'var(--muted)', width: 32, height: 32, borderRadius: '50%', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 10 }}
                 >
                   ✕
                 </button>
@@ -251,8 +258,8 @@ export default function Portfolio() {
                     </span>
                   ))}
                 </div>
-                <h3 style={{ fontFamily: 'var(--font-h)', fontWeight: 800, fontSize: 'clamp(1.5rem,2.5vw,2rem)', lineHeight: 1.1, letterSpacing: '-.03em', marginBottom: '1.5rem', color: 'var(--white)' }}>{selectedProject.title}</h3>
-                <p style={{ fontSize: '.9rem', fontWeight: 300, color: 'var(--muted2)', lineHeight: 1.7, marginBottom: '2rem' }}>{selectedProject.details}</p>
+                <h3 className="popup-modal-h3" style={{ fontFamily: 'var(--font-h)', fontWeight: 800, fontSize: 'clamp(1.5rem,2.5vw,2rem)', lineHeight: 1.1, letterSpacing: '-.03em', marginBottom: '1.5rem', color: 'var(--white)' }}>{selectedProject.title}</h3>
+                <p className="popup-modal-desc" style={{ fontSize: '.9rem', fontWeight: 300, color: 'var(--muted2)', lineHeight: 1.7, marginBottom: '2rem' }}>{selectedProject.details}</p>
                 
                 <div style={{ marginTop: 'auto', display: 'flex', flexDirection: 'column', gap: '1rem', borderTop: '1px solid var(--border)', paddingTop: '1.5rem' }}>
                   {selectedProject.link ? (

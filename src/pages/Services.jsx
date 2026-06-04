@@ -153,8 +153,8 @@ export default function Services() {
                       </a>
                     ) : srv.title === 'Smart Business Card Services' ? (
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                        <a href="https://robosolution-bussiness-card.vercel.app/" target="_blank" rel="noreferrer" className="srv-link" style={{ color: 'var(--white)' }}>
-                          Open Live Demo Card ↗
+                        <a href="https://nfc-card-preview.vercel.app/" target="_blank" rel="noreferrer" className="srv-link" style={{ color: 'var(--white)' }}>
+                          Open Live Demo Card <ArrowRight size={16} />
                         </a>
                         <Link to={`/contact?type=Service&subject=${encodeURIComponent(srv.title)}`} className="srv-link">
                           Inquire About Service <ArrowRight size={16} />

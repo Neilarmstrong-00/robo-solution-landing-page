@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import AnimatedPage from '../components/AnimatedPage';
 import Reveal from '../components/Reveal';
 
@@ -42,14 +42,11 @@ export default function Contact() {
       
       if (data.success) {
         setIsSent(true);
-        e.target.reset();
-        setContactType("");
       }
     } catch (error) {
       console.error("Form submission error:", error);
     } finally {
       setIsSubmitting(false);
-      setTimeout(() => setIsSent(false), 3500);
     }
   };
 
@@ -125,8 +122,20 @@ export default function Contact() {
           </div>
 
           <Reveal direction="right">
-            <form className="c-form" onSubmit={handleSubmit}>
-              <div className="c-form-title">Fill This Form Below</div>
+            {isSent ? (
+              <div className="c-form" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '4rem 2rem', minHeight: '100%' }}>
+                <div style={{ fontSize: '3rem', marginBottom: '1.5rem', background: 'rgba(232,255,71,.1)', width: 80, height: 80, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent)' }}>✓</div>
+                <h3 style={{ fontFamily: 'var(--font-h)', fontSize: '1.6rem', fontWeight: 800, marginBottom: '1rem', color: 'var(--white)', letterSpacing: '-.02em' }}>Thank you!</h3>
+                <p style={{ color: 'var(--muted2)', fontSize: '.95rem', marginBottom: '2.5rem', lineHeight: 1.6, maxWidth: 350 }}>
+                  We have received your message and will get back to you within 24 hours.
+                </p>
+                <Link to="/" className="hero-btn-prim" style={{ width: '100%', maxWidth: '280px', justifyContent: 'center', height: '50px' }}>
+                  Back to Home →
+                </Link>
+              </div>
+            ) : (
+              <form className="c-form" onSubmit={handleSubmit}>
+                <div className="c-form-title">Fill This Form Below</div>
               <div className="c-row">
                 <div className="c-group">
                   <label className="c-label">Your Name</label>
@@ -213,7 +222,8 @@ export default function Contact() {
               >
                 <span>{isSubmitting ? 'Sending...' : isSent ? 'Message Sent! ✓' : 'Send Message →'}</span>
               </button>
-            </form>
+              </form>
+            )}
           </Reveal>
         </div>
       </section>

@@ -221,7 +221,7 @@ export default function Contact() {
                 type="submit" 
                 style={{ background: isSent ? 'var(--accent)' : 'var(--white)' }}
               >
-                <span>{isSubmitting ? 'Sending...' : isSent ? 'Message Sent! ✓' : 'Send Message <ArrowRight size={16} />'}</span>
+                <span>{isSubmitting ? 'Sending...' : isSent ? 'Message Sent! ✓' : <>Send Message <ArrowRight size={16} /></>}</span>
               </button>
               </form>
             )}

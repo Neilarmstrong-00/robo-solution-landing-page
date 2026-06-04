@@ -66,10 +66,10 @@ export default function About() {
           <div className="about-sticky">
             <Reveal direction="left">
               <div className="sec-label">About Us</div>
-              <div style={{ marginBottom: '1.5rem', display: 'inline-flex', marginTop: '.5rem' }}>
-                <div style={{ border: '1px solid var(--border2)', borderRadius: 999, padding: '6px 14px', fontSize: '.7rem', fontWeight: 500, letterSpacing: '.1em', color: 'var(--muted2)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)', background: 'rgba(255,255,255,.04)', display: 'flex', alignItems: 'center', gap: 7 }}>
-                  <motion.span animate={{ opacity: [1, 0.15, 1] }} transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }} style={{ width: 5, height: 5, borderRadius: '50%', background: 'var(--accent)' }} />
-                  Maharashtra, India · Est. 2023
+              <div style={{ marginBottom: '1.5rem', display: 'flex', marginTop: '.5rem' }}>
+                <div style={{ border: '1px solid var(--border2)', borderRadius: 999, padding: '6px 14px', fontSize: '.7rem', fontWeight: 500, letterSpacing: '.1em', color: 'var(--muted2)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)', background: 'rgba(255,255,255,.04)', display: 'flex', alignItems: 'center', gap: 7, flexWrap: 'wrap' }}>
+                  <motion.span animate={{ opacity: [1, 0.15, 1] }} transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }} style={{ width: 5, height: 5, borderRadius: '50%', background: 'var(--accent)', flexShrink: 0 }} />
+                  <span>Maharashtra, India · Est. 2023</span>
                 </div>
               </div>
               <h2 className="sec-h" style={{ marginTop: '0' }}>Empowering the future of tech and agriculture.</h2>
@@ -178,9 +178,9 @@ export default function About() {
         .about-cta { margin-top: 2.5rem; height: 44px; padding: 0 26px; border-radius: 999px; border: 1px solid var(--border2); color: var(--white); font-size: .82rem; font-weight: 500; display: inline-flex; align-items: center; gap: 8px; transition: border-color .2s, background .2s; }
         .about-cta:hover { border-color: var(--accent); background: rgba(232,255,71,.04); }
         .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 18px; overflow: hidden; margin-bottom: 2px; }
-        .stat-cell { background: var(--bg2); padding: 2.25rem 1.75rem; display: flex; flex-direction: column; gap: .4rem; transition: background .3s; }
+        .stat-cell { background: var(--bg2); padding: 1.75rem 1.25rem; display: flex; flex-direction: column; gap: .4rem; transition: background .3s; }
         .stat-cell:hover { background: var(--surface); }
-        .stat-n { font-family: var(--font-h); font-weight: 800; font-size: clamp(2.4rem,4vw,3.8rem); line-height: 1; letter-spacing: -.04em; }
+        .stat-n { font-family: var(--font-h); font-weight: 800; font-size: clamp(2rem,6vw,3.8rem); line-height: 1; letter-spacing: -.04em; }
         .stat-n .cnt { color: var(--white); }
         .stat-n .suf { color: var(--muted2); }
         .stat-lbl { font-size: .78rem; font-weight: 400; color: var(--muted); letter-spacing: .04em; word-wrap: break-word; }
@@ -193,10 +193,10 @@ export default function About() {
         .hide-scroll::-webkit-scrollbar { display: none; }
         .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
         
-        @media(max-width: 900px) { .about-wrap { grid-template-columns: 1fr; gap: 3rem; } .about-sticky { position: static; } }
+        @media(max-width: 900px) { .about-wrap { grid-template-columns: 1fr; gap: 2.5rem; } .about-sticky { position: static; } }
         @media(max-width: 768px) {
           .stats-grid { grid-template-columns: 1fr; }
-          .stat-cell { padding: 1.5rem 1.5rem; }
+          .stat-cell { padding: 1.25rem 1rem; }
         }
         @media(max-width: 768px) {
           .team-carousel-outer { overflow: visible !important; margin: 0 !important; scroll-snap-type: none !important; }

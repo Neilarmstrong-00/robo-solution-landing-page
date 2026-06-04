@@ -35,6 +35,8 @@ body{
   font-family:var(--font-b);
   overflow-x:hidden;
   cursor:none;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 ::-webkit-scrollbar{width:3px}
@@ -72,9 +74,9 @@ body::after{
 /* UTILITIES */
 .sec-label{display:flex;align-items:center;gap:10px;font-size:.7rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:1.25rem}
 .sec-label::before{content:'';width:18px;height:1px;background:var(--muted)}
-.sec-h{font-family:var(--font-h);font-weight:800;font-size:clamp(2.2rem,5.5vw,5rem);line-height:.95;letter-spacing:-.035em}
-.sec-desc{font-size:clamp(.9rem,1.3vw,1.05rem);font-weight:300;color:var(--muted2);line-height:1.75;max-width:500px}
-section{padding:clamp(4.5rem,9vw,8.5rem) clamp(1.5rem,4vw,3.5rem)}
+.sec-h{font-family:var(--font-h);font-weight:800;font-size:clamp(1.7rem,6vw,5rem);line-height:.95;letter-spacing:-.035em;overflow-wrap:anywhere}
+.sec-desc{font-size:clamp(.85rem,1.5vw,1.05rem);font-weight:300;color:var(--muted2);line-height:1.75;max-width:500px}
+section{padding:clamp(3.5rem,9vw,8.5rem) clamp(1rem,4vw,3.5rem); overflow: hidden;}
 
 .hero-btn-prim{height:44px;padding:0 26px;border-radius:999px;background:var(--accent);color:#09090b;font-family:var(--font-h);font-weight:700;font-size:.82rem;letter-spacing:.04em;display:flex;align-items:center;gap:6px;transition:transform .25s,box-shadow .25s}
 .hero-btn-prim:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(232,255,71,.35)}

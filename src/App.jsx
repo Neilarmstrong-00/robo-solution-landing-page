@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, Link } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { useEffect } from 'react';
 import Navbar from './components/Navbar';
@@ -18,6 +18,18 @@ function ScrollToTop() {
     window.scrollTo(0, 0);
   }, [pathname]);
   return null;
+}
+
+function MobileHomeBtn() {
+  const location = useLocation();
+  if (location.pathname === '/') return null;
+  return (
+    <div className="mobile-home-wrap">
+      <Link to="/" className="mobile-home-btn">
+        <span style={{ marginRight: 8, fontSize: '1.2rem' }}>←</span> Back to Home
+      </Link>
+    </div>
+  );
 }
 
 function App() {
@@ -40,6 +52,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </AnimatePresence>
+        <MobileHomeBtn />
         <Footer />
       </div>
     </>

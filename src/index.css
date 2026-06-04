@@ -82,3 +82,10 @@ section{padding:clamp(3.5rem,9vw,8.5rem) clamp(1rem,4vw,3.5rem); overflow: hidde
 .hero-btn-prim:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(232,255,71,.35)}
 .hero-btn-sec{height:44px;padding:0 24px;border-radius:999px;border:1px solid var(--border2);color:var(--white);font-size:.82rem;font-weight:500;display:flex;align-items:center;gap:6px;transition:border-color .2s,background .2s;backdrop-filter:blur(6px);background:rgba(255,255,255,.04)}
 .hero-btn-sec:hover{border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.08)}
+
+.mobile-home-wrap { display: none; }
+@media(max-width: 768px) {
+  .mobile-home-wrap { display: flex; justify-content: center; padding: 1rem 1.5rem 3rem 1.5rem; background: transparent; }
+  .mobile-home-btn { display: inline-flex; align-items: center; justify-content: center; width: 100%; max-width: 320px; height: 54px; border-radius: 999px; background: var(--card); border: 1px solid var(--border); color: var(--white); font-family: var(--font-h); font-weight: 700; font-size: .95rem; text-decoration: none; box-shadow: 0 4px 20px rgba(0,0,0,0.5); transition: background .2s, border-color .2s; }
+  .mobile-home-btn:active { background: var(--surface); border-color: var(--border2); }
+}

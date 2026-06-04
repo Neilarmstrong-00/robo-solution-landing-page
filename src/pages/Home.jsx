@@ -166,7 +166,7 @@ export default function Home() {
           </div>
           <div className="hs-right">
             <Reveal direction="right" style={{ height: '100%' }}>
-              <img src="/images/workshop/6.png" alt="Workshop" style={{ width: '100%', aspectRatio: '1.2/1', minHeight: '260px', objectFit: 'contain', background: 'var(--surface)', padding: '1rem', borderRadius: '18px', border: '1px solid var(--border)' }} />
+              <img src="/images/workshop/6.png" alt="Workshop" style={{ width: '100%', height: 'auto', display: 'block', background: 'var(--surface)', padding: '1rem', borderRadius: '18px', border: '1px solid var(--border)' }} />
             </Reveal>
           </div>
         </div>
@@ -185,7 +185,7 @@ export default function Home() {
           </div>
           <div className="hs-right" style={{ direction: 'ltr' }}>
             <Reveal direction="left" style={{ height: '100%' }}>
-              <img src="/images/3dprint/8.1.PNG" alt="3D Printing" style={{ width: '100%', aspectRatio: '1.2/1', minHeight: '260px', objectFit: 'contain', background: 'var(--surface)', padding: '1rem', borderRadius: '18px', border: '1px solid var(--border)' }} />
+              <img src="/images/3dprint/8.1.PNG" alt="3D Printing" style={{ width: '100%', height: 'auto', display: 'block', background: 'var(--surface)', padding: '1rem', borderRadius: '18px', border: '1px solid var(--border)' }} />
             </Reveal>
           </div>
         </div>

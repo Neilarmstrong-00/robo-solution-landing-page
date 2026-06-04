@@ -85,7 +85,7 @@ section{padding:clamp(3.5rem,9vw,8.5rem) clamp(1rem,4vw,3.5rem); overflow: hidde
 
 .mobile-home-top-wrap { display: none; }
 @media(max-width: 768px) {
-  .mobile-home-top-wrap { display: block; position: absolute; top: 80px; left: clamp(1rem, 4vw, 3.5rem); z-index: 10; }
-  .mobile-home-top-btn { display: inline-block; font-size: 0.85rem; font-weight: 500; color: var(--muted); text-decoration: none; padding: 8px 12px 8px 0; }
+  .mobile-home-top-wrap { display: block; position: absolute; top: 85px; left: clamp(1rem, 4vw, 3.5rem); z-index: 10; }
+  .mobile-home-top-btn { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-h); font-size: 0.85rem; font-weight: 600; color: var(--muted); text-decoration: none; padding: 8px 12px 8px 0; transition: color 0.2s; }
   .mobile-home-top-btn:active { color: var(--accent); }
 }

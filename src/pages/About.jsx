@@ -196,7 +196,7 @@ export default function About() {
         @media(max-width: 900px) { .about-wrap { grid-template-columns: 1fr; } .about-sticky { position: static; } }
         @media(max-width: 768px) {
           .team-carousel-outer { overflow: visible !important; margin: 0 !important; scroll-snap-type: none !important; }
-          .team-carousel-inner { flex-wrap: wrap; width: 100% !important; justify-content: center; padding: 0 !important; display: grid !important; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important; }
+          .team-carousel-inner { flex-wrap: wrap; width: 100% !important; justify-content: center; padding: 0 !important; display: grid !important; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)) !important; }
           .team-card { width: 100% !important; }
           .team-drag-hint { display: none !important; }
           .popup-modal-content { max-height: 95vh !important; flex-direction: column !important; }

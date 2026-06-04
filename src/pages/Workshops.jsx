@@ -50,7 +50,7 @@ export default function Workshops() {
               <h2 style={{ fontFamily: 'var(--font-h)', fontSize: 'clamp(2rem, 4vw, 2.8rem)', fontWeight: 700, color: 'var(--white)', marginBottom: '3rem' }}>
                 Why Choose <span style={{ color: 'var(--accent)' }}>Robo Solution</span>
               </h2>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(280px, 100%), 1fr))', gap: '2rem' }}>
                 {[
                   { icon: <Briefcase size={36} color="var(--accent)" />, title: "Industry-Relevant Curriculum", desc: "We strictly teach the exact tools and workflows currently used in modern engineering and industrial automation. No outdated syllabus." },
                   { icon: <Hammer size={36} color="var(--white)" />, title: "100% Hands-On Approach", desc: "We believe in learning by building. No long lectures; only practical, project-based execution guided directly by Nilove and Prathemesh." },

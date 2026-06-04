@@ -81,7 +81,7 @@ export default function Services() {
           </p>
         </Reveal>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(280px, 100%), 1fr))', gap: '2rem' }}>
           {services.map((srv, i) => (
             <Reveal key={i} delay={0.1 * i} direction="up" className="srv-card-wrapper">
               <motion.div

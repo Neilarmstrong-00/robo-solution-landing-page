@@ -176,7 +176,7 @@ export default function ThreeDPrinting() {
               <h2 style={{ fontFamily: 'var(--font-h)', fontSize: 'clamp(2rem, 4vw, 2.8rem)', fontWeight: 700, color: 'var(--white)', marginBottom: '3rem' }}>
                 How It <span style={{ color: 'var(--accent)' }}>Works</span>
               </h2>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(280px, 100%), 1fr))', gap: '2rem' }}>
                 {[
                   { icon: <UploadCloud size={36} color="var(--accent)" />, title: "Upload Your Design", desc: "Submit your STL, OBJ, or STEP files through our secure contact form, along with your specifications." },
                   { icon: <Settings size={36} color="var(--white)" />, title: "Expert Consultation", desc: "Our engineers review your files, recommend the best materials, and provide a transparent quote." },
@@ -216,7 +216,7 @@ export default function ThreeDPrinting() {
       </section>
 
       <style>{`
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr)); gap: 2rem; }
         .product-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; transition: border-color 0.3s; display: flex; flex-direction: column; }
         .product-card:hover { border-color: var(--border2); }
         .product-card-link { text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%; }

@@ -194,7 +194,7 @@ export default function About() {
         .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
         
         @media(max-width: 900px) { .about-wrap { grid-template-columns: 1fr; gap: 3rem; } .about-sticky { position: static; } }
-        @media(max-width: 500px) {
+        @media(max-width: 768px) {
           .stats-grid { grid-template-columns: 1fr; }
           .stat-cell { padding: 1.5rem 1.5rem; }
         }

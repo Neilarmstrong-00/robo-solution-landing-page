@@ -27,19 +27,21 @@ function App() {
     <>
       <ScrollToTop />
       <CustomCursor />
-      <Navbar />
-      <AnimatePresence mode="wait">
-        <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<Home />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/workshops" element={<Workshops />} />
-          <Route path="/3d-printing" element={<ThreeDPrinting />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </AnimatePresence>
-      <Footer />
+      <div style={{ overflowX: 'hidden', width: '100%', position: 'relative' }}>
+        <Navbar />
+        <AnimatePresence mode="wait">
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<Home />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/workshops" element={<Workshops />} />
+            <Route path="/3d-printing" element={<ThreeDPrinting />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </AnimatePresence>
+        <Footer />
+      </div>
     </>
   );
 }

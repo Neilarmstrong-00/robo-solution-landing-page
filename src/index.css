@@ -83,9 +83,9 @@ section{padding:clamp(3.5rem,9vw,8.5rem) clamp(1rem,4vw,3.5rem); overflow: hidde
 .hero-btn-sec{height:44px;padding:0 24px;border-radius:999px;border:1px solid var(--border2);color:var(--white);font-size:.82rem;font-weight:500;display:flex;align-items:center;gap:6px;transition:border-color .2s,background .2s;backdrop-filter:blur(6px);background:rgba(255,255,255,.04)}
 .hero-btn-sec:hover{border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.08)}
 
-.mobile-home-wrap { display: none; }
+.mobile-home-top-wrap { display: none; }
 @media(max-width: 768px) {
-  .mobile-home-wrap { display: flex; position: fixed; bottom: 24px; right: 24px; z-index: 9999; }
-  .mobile-home-btn { display: flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 50%; background: var(--accent); color: #000; text-decoration: none; box-shadow: 0 4px 20px rgba(232,255,71,0.3); transition: transform .2s, box-shadow .2s; }
-  .mobile-home-btn:active { transform: scale(0.92); }
+  .mobile-home-top-wrap { display: block; position: absolute; top: 80px; left: clamp(1rem, 4vw, 3.5rem); z-index: 10; }
+  .mobile-home-top-btn { display: inline-block; font-size: 0.85rem; font-weight: 500; color: var(--muted); text-decoration: none; padding: 8px 12px 8px 0; }
+  .mobile-home-top-btn:active { color: var(--accent); }
 }

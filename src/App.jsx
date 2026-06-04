@@ -24,9 +24,9 @@ function MobileHomeBtn() {
   const location = useLocation();
   if (location.pathname === '/') return null;
   return (
-    <div className="mobile-home-wrap">
-      <Link to="/" className="mobile-home-btn" title="Back to Home">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+    <div className="mobile-home-top-wrap">
+      <Link to="/" className="mobile-home-top-btn">
+        ← Back to Home
       </Link>
     </div>
   );
@@ -41,6 +41,7 @@ function App() {
       <CustomCursor />
       <div style={{ overflowX: 'hidden', width: '100%', position: 'relative' }}>
         <Navbar />
+        <MobileHomeBtn />
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Home />} />
@@ -49,12 +50,11 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/workshops" element={<Workshops />} />
             <Route path="/3d-printing" element={<ThreeDPrinting />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </AnimatePresence>
-        <MobileHomeBtn />
-        <Footer />
-      </div>
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </AnimatePresence>
+      <Footer />
+    </div>
     </>
   );
 }

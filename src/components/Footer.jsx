@@ -77,11 +77,8 @@ export default function Footer() {
 
       <style>{`
         @media(max-width:900px){ .footer-top { grid-template-columns: 1fr 1fr !important; } }
-        @media(max-width:600px){ 
-          .footer-top { grid-template-columns: 1fr !important; } 
-          .footer-bottom { flex-direction: column-reverse; justify-content: center; align-items: center; gap: 1.5rem; }
-        }
-        .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem clamp(1.5rem,4vw,3.5rem) clamp(2rem,3vw,3rem); border-top: 1px solid var(--border); flex-wrap: wrap; gap: 1rem; }
+        @media(max-width:600px){ .footer-top { grid-template-columns: 1fr !important; } }
+        .footer-bottom { display: flex; flex-direction: column-reverse; align-items: center; justify-content: center; padding: 2.5rem clamp(1.5rem,4vw,3.5rem) 2rem; border-top: 1px solid var(--border); gap: 1.5rem; text-align: center; }
         .back-top-btn:hover { border-color: var(--accent) !important; color: var(--accent) !important; }
       `}</style>
     </footer>

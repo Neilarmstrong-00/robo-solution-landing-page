@@ -228,20 +228,20 @@ export default function About() {
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
               onClick={(e) => e.stopPropagation()}
               className="popup-modal-content"
-              style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 24, width: '100%', maxWidth: 850, maxHeight: '90vh', overflowY: 'auto', overflowX: 'hidden', display: 'flex', flexDirection: 'row' }}
+              style={{ position: 'relative', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 24, width: '100%', maxWidth: 850, maxHeight: '90vh', overflowY: 'auto', overflowX: 'hidden', display: 'flex', flexDirection: 'row' }}
             >
+              <button 
+                onClick={() => setSelectedMember(null)}
+                style={{ position: 'absolute', top: '1rem', right: '1rem', background: 'rgba(9,9,11,0.5)', backdropFilter: 'blur(4px)', WebkitBackdropFilter: 'blur(4px)', border: '1px solid var(--border)', color: 'var(--white)', width: 32, height: 32, borderRadius: '50%', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 100 }}
+              >
+                ✕
+              </button>
               <div className="popup-modal-img" style={{ flex: '1.2', minHeight: 250, background: '#000', position: 'relative' }}>
                 <img src={selectedMember.image} alt={selectedMember.name} style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.9 }} />
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, transparent 50%, var(--card) 100%)', opacity: window.innerWidth < 768 ? 0 : 1 }}></div>
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, transparent 50%, var(--card) 100%)', opacity: window.innerWidth < 768 ? 1 : 0 }}></div>
               </div>
               <div className="popup-modal-text" style={{ flex: '1.2', padding: '2.5rem 2rem', display: 'flex', flexDirection: 'column', position: 'relative' }}>
-                <button 
-                  onClick={() => setSelectedMember(null)}
-                  style={{ position: 'absolute', top: '1rem', right: '1rem', background: 'rgba(255,255,255,0.05)', border: 'none', color: 'var(--muted)', width: 32, height: 32, borderRadius: '50%', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 10 }}
-                >
-                  ✕
-                </button>
                 <div style={{ fontSize: '.75rem', fontWeight: 600, letterSpacing: '.15em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: '.5rem' }}>{selectedMember.role}</div>
                 <h3 className="popup-modal-h3" style={{ fontFamily: 'var(--font-h)', fontWeight: 800, fontSize: 'clamp(1.8rem,3vw,2.4rem)', lineHeight: 1.1, letterSpacing: '-.03em', marginBottom: '1.5rem', color: 'var(--white)', whiteSpace: selectedMember.name.includes('Nilove') ? 'nowrap' : 'normal' }}>{selectedMember.name}</h3>
                 <p className="popup-modal-desc" style={{ fontSize: '.95rem', fontWeight: 300, color: 'var(--muted2)', lineHeight: 1.7, marginBottom: '2rem' }}>{selectedMember.desc}</p>
@@ -272,7 +272,7 @@ export default function About() {
                 </div>
                 
                 {(selectedMember.linkedin || selectedMember.instagram || selectedMember.phone) && (
-                  <div style={{ display: 'flex', gap: '1rem', marginTop: '1rem', paddingTop: '1rem', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginTop: '1rem', paddingTop: '1rem', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
                     {selectedMember.linkedin && (
                       <a href={selectedMember.linkedin} target="_blank" rel="noreferrer" style={{ color: 'var(--muted)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 6, fontSize: '.8rem', transition: 'color .2s' }} onMouseEnter={(e)=>e.target.style.color='var(--white)'} onMouseLeave={(e)=>e.target.style.color='var(--muted)'}>
                         <span style={{ padding: '6px', background: 'rgba(255,255,255,0.03)', borderRadius: 6, display: 'flex' }}>

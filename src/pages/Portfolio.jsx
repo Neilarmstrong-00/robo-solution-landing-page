@@ -204,8 +204,14 @@ export default function Portfolio() {
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
               onClick={(e) => e.stopPropagation()}
               className="popup-modal-content"
-              style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 24, width: '100%', maxWidth: 900, maxHeight: '90vh', overflowY: 'auto', overflowX: 'hidden', display: 'flex', flexDirection: 'row' }}
+              style={{ position: 'relative', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 24, width: '100%', maxWidth: 900, maxHeight: '90vh', overflowY: 'auto', overflowX: 'hidden', display: 'flex', flexDirection: 'row' }}
             >
+              <button 
+                onClick={() => setSelectedProject(null)}
+                style={{ position: 'absolute', top: '1rem', right: '1rem', background: 'rgba(9,9,11,0.5)', backdropFilter: 'blur(4px)', WebkitBackdropFilter: 'blur(4px)', border: '1px solid var(--border)', color: 'var(--white)', width: 32, height: 32, borderRadius: '50%', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 100 }}
+              >
+                ✕
+              </button>
               <div className="popup-modal-img" style={{ flex: '1.2', minHeight: 300, background: '#000', position: 'relative', overflow: 'hidden' }}>
                 {!isModalTransparent && (
                   <div style={{ position: 'absolute', inset: 0, backgroundColor: modalColor, zIndex: 0 }} />
@@ -242,12 +248,6 @@ export default function Portfolio() {
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, transparent 50%, var(--card) 100%)', opacity: window.innerWidth < 768 ? 1 : 0, pointerEvents: 'none' }}></div>
               </div>
               <div className="popup-modal-text" style={{ flex: '1', padding: 'clamp(2rem, 4vw, 3rem)', display: 'flex', flexDirection: 'column', position: 'relative' }}>
-                <button 
-                  onClick={() => setSelectedProject(null)}
-                  style={{ position: 'absolute', top: '1rem', right: '1rem', background: 'rgba(255,255,255,0.05)', border: 'none', color: 'var(--muted)', width: 32, height: 32, borderRadius: '50%', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 10 }}
-                >
-                  ✕
-                </button>
                 <div style={{ display: 'flex', gap: '.5rem', flexWrap: 'wrap', marginBottom: '1rem' }}>
                   {selectedProject.cats.map((cat, j) => (
                     <span key={j} style={{

@@ -25,8 +25,8 @@ function MobileHomeBtn() {
   if (location.pathname === '/') return null;
   return (
     <div className="mobile-home-wrap">
-      <Link to="/" className="mobile-home-btn">
-        <span style={{ marginRight: 8, fontSize: '1.2rem' }}>←</span> Back to Home
+      <Link to="/" className="mobile-home-btn" title="Back to Home">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
       </Link>
     </div>
   );

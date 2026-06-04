@@ -85,7 +85,7 @@ section{padding:clamp(3.5rem,9vw,8.5rem) clamp(1rem,4vw,3.5rem); overflow: hidde
 
 .mobile-home-wrap { display: none; }
 @media(max-width: 768px) {
-  .mobile-home-wrap { display: flex; justify-content: center; padding: 1rem 1.5rem 3rem 1.5rem; background: transparent; }
-  .mobile-home-btn { display: inline-flex; align-items: center; justify-content: center; width: 100%; max-width: 320px; height: 54px; border-radius: 999px; background: var(--card); border: 1px solid var(--border); color: var(--white); font-family: var(--font-h); font-weight: 700; font-size: .95rem; text-decoration: none; box-shadow: 0 4px 20px rgba(0,0,0,0.5); transition: background .2s, border-color .2s; }
-  .mobile-home-btn:active { background: var(--surface); border-color: var(--border2); }
+  .mobile-home-wrap { display: flex; position: fixed; bottom: 24px; right: 24px; z-index: 9999; }
+  .mobile-home-btn { display: flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 50%; background: var(--accent); color: #000; text-decoration: none; box-shadow: 0 4px 20px rgba(232,255,71,0.3); transition: transform .2s, box-shadow .2s; }
+  .mobile-home-btn:active { transform: scale(0.92); }
 }

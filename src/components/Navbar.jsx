@@ -37,7 +37,7 @@ export default function Navbar() {
     >
       <div style={{ flex: 1, display: 'flex', alignItems: 'center' }}>
         <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
-          <img src="/logo-light.png" alt="Robo Solutions" style={{ height: 38, objectFit: 'contain' }} />
+          <img src="/logo-light.png" alt="Robo Solutions" className="nav-logo" />
         </Link>
       </div>
       
@@ -76,11 +76,14 @@ export default function Navbar() {
         </div>
       </div>
 
-      <style>{`
+        .nav-logo { height: 38px; object-fit: contain; transition: height 0.3s; }
         @media(max-width: 900px) { 
           .nav-mid { display: none !important; } 
           .hidden-mobile { display: none !important; }
           .hamburger { display: flex !important; align-items: center; justify-content: center; width: 38px; height: 38px; }
+        }
+        @media(max-width: 768px) {
+          .nav-logo { height: 26px !important; }
         }
         .nav-cta:hover { background: var(--accent) !important; transform: scale(1.02); }
         .nav-cta:hover .nav-cta-dot { background: #09090b !important; }

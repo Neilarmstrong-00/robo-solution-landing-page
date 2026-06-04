@@ -129,7 +129,7 @@ export default function Home() {
           <div className="home-grid-2">
             <Reveal direction="left" style={{ height: '100%' }}>
               <div className="hc-img-card">
-                <img src="/images/vajra_image.webp" alt="Vajra" style={{ width: '100%', height: '280px', objectFit: 'cover' }} />
+                <img src="/images/vajra_image.webp" alt="Vajra" style={{ width: '100%', height: '220px', objectFit: 'cover' }} />
                 <div className="hc-img-content">
                   <h3 className="hc-title">Vajra 2.1</h3>
                   <p className="hc-desc">Precision agrochemical spraying rover designed for complex farming terrains.</p>
@@ -138,7 +138,7 @@ export default function Home() {
             </Reveal>
             <Reveal direction="right" style={{ height: '100%' }}>
               <div className="hc-img-card">
-                <img src="/images/Hootie1.webp" alt="Hootie" style={{ width: '100%', height: '280px', objectFit: 'cover' }} />
+                <img src="/images/Hootie1.webp" alt="Hootie" style={{ width: '100%', height: '220px', objectFit: 'cover' }} />
                 <div className="hc-img-content">
                   <h3 className="hc-title">Hootie</h3>
                   <p className="hc-desc">Biomimetic IoT companion robot for interactive automation and engagement.</p>
@@ -166,7 +166,7 @@ export default function Home() {
           </div>
           <div className="hs-right">
             <Reveal direction="right" style={{ height: '100%' }}>
-              <img src="/images/workshop/6.png" alt="Workshop" style={{ width: '100%', height: '100%', minHeight: '320px', objectFit: 'cover', borderRadius: '18px', border: '1px solid var(--border)' }} />
+              <img src="/images/workshop/6.png" alt="Workshop" style={{ width: '100%', aspectRatio: '1.2/1', minHeight: '260px', objectFit: 'cover', borderRadius: '18px', border: '1px solid var(--border)' }} />
             </Reveal>
           </div>
         </div>
@@ -185,7 +185,7 @@ export default function Home() {
           </div>
           <div className="hs-right" style={{ direction: 'ltr' }}>
             <Reveal direction="left" style={{ height: '100%' }}>
-              <img src="/images/3dprint/8.1.PNG" alt="3D Printing" style={{ width: '100%', height: '100%', minHeight: '320px', objectFit: 'cover', borderRadius: '18px', border: '1px solid var(--border)' }} />
+              <img src="/images/3dprint/8.1.PNG" alt="3D Printing" style={{ width: '100%', aspectRatio: '1.2/1', minHeight: '260px', objectFit: 'cover', borderRadius: '18px', border: '1px solid var(--border)' }} />
             </Reveal>
           </div>
         </div>
@@ -260,6 +260,11 @@ export default function Home() {
           #hero { min-height: 85vh !important; justify-content: flex-start !important; padding-top: 130px !important; }
           .hero-h1 { font-size: clamp(1.4rem, 8vw, 3rem) !important; }
           .hero-h1 em { color: var(--accent) !important; -webkit-text-stroke: 0px !important; }
+          
+          .home-grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 1rem; padding-bottom: 1.5rem; margin: 0 calc(-1 * clamp(1rem, 4vw, 3.5rem)); padding: 0 clamp(1rem, 4vw, 3.5rem) 1.5rem; -webkit-overflow-scrolling: touch; }
+          .home-grid::-webkit-scrollbar { display: none; }
+          .home-grid { -ms-overflow-style: none; scrollbar-width: none; }
+          .home-card { min-width: 270px; scroll-snap-align: center; padding: 1.75rem 1.5rem; }
         }
       `}</style>
     </AnimatedPage>

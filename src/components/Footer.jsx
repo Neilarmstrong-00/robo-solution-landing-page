@@ -66,15 +66,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div style={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        padding: '1.5rem clamp(1.5rem,4vw,3.5rem) clamp(2rem,3vw,3rem)',
-        borderTop: '1px solid var(--border)',
-        flexWrap: 'wrap',
-        gap: '1rem'
-      }}>
+      <div className="footer-bottom">
         <span style={{ fontSize: '.75rem', color: 'var(--muted)' }}>© 2026 Robo Solutions. All Rights Reserved</span>
         <button onClick={scrollToTop} className="back-top-btn" style={{
           height: 34, padding: '0 16px', borderRadius: 999, border: '1px solid var(--border)', color: 'var(--muted)', fontSize: '.72rem', fontWeight: 500, letterSpacing: '.06em', display: 'flex', alignItems: 'center', gap: 6, transition: 'border-color .2s, color .2s'
@@ -85,7 +77,11 @@ export default function Footer() {
 
       <style>{`
         @media(max-width:900px){ .footer-top { grid-template-columns: 1fr 1fr !important; } }
-        @media(max-width:600px){ .footer-top { grid-template-columns: 1fr !important; } }
+        @media(max-width:600px){ 
+          .footer-top { grid-template-columns: 1fr !important; } 
+          .footer-bottom { flex-direction: column-reverse; justify-content: center; align-items: center; gap: 1.5rem; }
+        }
+        .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem clamp(1.5rem,4vw,3.5rem) clamp(2rem,3vw,3rem); border-top: 1px solid var(--border); flex-wrap: wrap; gap: 1rem; }
         .back-top-btn:hover { border-color: var(--accent) !important; color: var(--accent) !important; }
       `}</style>
     </footer>

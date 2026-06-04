@@ -76,6 +76,7 @@ export default function Navbar() {
         </div>
       </div>
 
+      <style>{`
         .nav-logo { height: 38px; object-fit: contain; transition: height 0.3s; }
         @media(max-width: 900px) { 
           .nav-mid { display: none !important; } 

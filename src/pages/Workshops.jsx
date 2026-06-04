@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Briefcase, Hammer, TrendingUp } from 'lucide-react';
 import AnimatedPage from '../components/AnimatedPage';
 import Reveal from '../components/Reveal';
+import { ArrowRight } from '../components/Icons';
 
 export default function Workshops() {
   const events = [
@@ -121,7 +122,7 @@ export default function Workshops() {
                   Bring our industry-grade technical workshops to your campus. We handle the curriculum, hardware kits, and hands-on training.
                 </p>
               </div>
-              <a href="https://robosolution-workshop.vercel.app/" target="_blank" rel="noreferrer" className="hero-btn-prim" style={{ textDecoration: 'none' }}>Book a Workshop →</a>
+              <a href="https://robosolution-workshop.vercel.app/" target="_blank" rel="noreferrer" className="hero-btn-prim" style={{ textDecoration: 'none' }}>Book a Workshop <ArrowRight size={16} /></a>
             </div>
           </Reveal>
         </div>

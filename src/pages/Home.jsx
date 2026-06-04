@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import AnimatedPage from '../components/AnimatedPage';
 import Reveal from '../components/Reveal';
+import { ArrowRight } from '../components/Icons';
 
 export default function Home() {
   return (
@@ -113,7 +114,7 @@ export default function Home() {
           </div>
           
           <Reveal delay={0.2}>
-            <Link to="/services" className="hero-btn-prim" style={{ width: 'fit-content' }}>Explore All Services →</Link>
+            <Link to="/services" className="hero-btn-prim" style={{ width: 'fit-content' }}>Explore All Services <ArrowRight size={16} /></Link>
           </Reveal>
         </div>
       </section>
@@ -148,7 +149,7 @@ export default function Home() {
           </div>
 
           <Reveal delay={0.2}>
-            <Link to="/portfolio" className="hero-btn-sec" style={{ width: 'fit-content' }}>View Full Portfolio →</Link>
+            <Link to="/portfolio" className="hero-btn-sec" style={{ width: 'fit-content' }}>View Full Portfolio <ArrowRight size={16} /></Link>
           </Reveal>
         </div>
       </section>
@@ -161,7 +162,7 @@ export default function Home() {
               <div className="sec-label">Education</div>
               <h2 className="sec-h" style={{ fontSize: 'clamp(1.7rem, 4.5vw, 3.5rem)' }}>Building the<br/>next generation<br/>of engineers.</h2>
               <p className="sec-desc" style={{ marginTop: '1.5rem', marginBottom: '2.5rem' }}>We don't just build technology, we teach it. We conduct intensive, hands-on workshops across Maharashtra to bridge the gap between academic theory and industrial reality.</p>
-              <Link to="/workshops" className="hero-btn-prim" style={{ width: 'fit-content' }}>Explore Workshops →</Link>
+              <Link to="/workshops" className="hero-btn-prim" style={{ width: 'fit-content' }}>Explore Workshops <ArrowRight size={16} /></Link>
             </Reveal>
           </div>
           <div className="hs-right">
@@ -180,7 +181,7 @@ export default function Home() {
               <div className="sec-label">Rapid Prototyping</div>
               <h2 className="sec-h" style={{ fontSize: 'clamp(1.7rem, 4.5vw, 3.5rem)' }}>Bring your<br/>ideas into<br/>reality.</h2>
               <p className="sec-desc" style={{ marginTop: '1.5rem', marginBottom: '2.5rem' }}>From initial CAD designs to highly durable physical models. Our industrial-grade 3D printing services help you iterate faster and validate mechanical designs.</p>
-              <Link to="/3d-printing" className="hero-btn-sec" style={{ width: 'fit-content' }}>3D Printing Services →</Link>
+              <Link to="/3d-printing" className="hero-btn-sec" style={{ width: 'fit-content' }}>3D Printing Services <ArrowRight size={16} /></Link>
             </Reveal>
           </div>
           <div className="hs-right" style={{ direction: 'ltr' }}>
@@ -199,7 +200,7 @@ export default function Home() {
             <h2 className="sec-h" style={{ fontSize: 'clamp(1.7rem, 4.5vw, 3rem)' }}>Founded by engineers who build with their hands.</h2>
             <p className="sec-desc" style={{ margin: '1.5rem auto 2.5rem auto' }}>We bring a rare combination of software intelligence and mechanical craftsmanship to every project. We connect IoT sensors, AI intelligence, and precision hardware to solve real problems in fields and factories.</p>
             <div style={{ display: 'flex', justifyContent: 'center' }}>
-              <Link to="/about" className="hero-btn-sec" style={{ width: 'fit-content' }}>Read Our Story →</Link>
+              <Link to="/about" className="hero-btn-sec" style={{ width: 'fit-content' }}>Read Our Story <ArrowRight size={16} /></Link>
             </div>
           </Reveal>
         </div>
@@ -212,7 +213,7 @@ export default function Home() {
             <h2 className="sec-h" style={{ fontSize: 'clamp(2.2rem, 7vw, 4.5rem)', color: 'var(--accent)' }}>Ready to innovate?</h2>
             <p className="sec-desc" style={{ margin: '1.5rem auto 2.5rem auto' }}>Let's discuss how our intelligent hardware and software solutions can transform your operations.</p>
             <div style={{ display: 'flex', justifyContent: 'center' }}>
-              <Link to="/contact" className="hero-btn-prim" style={{ width: 'fit-content', height: '54px', fontSize: '1rem', padding: '0 32px' }}>Start Your Project →</Link>
+              <Link to="/contact" className="hero-btn-prim" style={{ width: 'fit-content', height: '54px', fontSize: '1rem', padding: '0 32px' }}>Start Your Project <ArrowRight size={16} /></Link>
             </div>
           </Reveal>
         </div>

@@ -4,6 +4,7 @@ import { UploadCloud, Settings, Truck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import AnimatedPage from '../components/AnimatedPage';
 import Reveal from '../components/Reveal';
+import { ArrowRight } from '../components/Icons';
 
 function ProductCard({ product, index }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -100,7 +101,7 @@ function ProductCard({ product, index }) {
         <div className="product-info">
           <h3>{product.name}</h3>
           <p>{product.description}</p>
-          <div className="product-cta">Customize Order →</div>
+          <div className="product-cta">Customize Order <ArrowRight size={16} /></div>
         </div>
       </a>
     </motion.div>
@@ -209,7 +210,7 @@ export default function ThreeDPrinting() {
                   Have a specific CAD model, a large batch order, or a unique idea? Get a direct quotation and consultation from our printing experts.
                 </p>
               </div>
-              <a href="https://robosolution-3d-printing.vercel.app/" target="_blank" rel="noreferrer" className="hero-btn-prim" style={{ textDecoration: 'none' }}>Get a Quotation →</a>
+              <a href="https://robosolution-3d-printing.vercel.app/" target="_blank" rel="noreferrer" className="hero-btn-prim" style={{ textDecoration: 'none' }}>Get a Quotation <ArrowRight size={16} /></a>
             </div>
           </Reveal>
         </div>

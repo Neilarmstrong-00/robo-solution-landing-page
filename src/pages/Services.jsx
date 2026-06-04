@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import AnimatedPage from '../components/AnimatedPage';
 import Reveal from '../components/Reveal';
+import { ArrowRight } from '../components/Icons';
 
 export default function Services() {
   const services = [
@@ -144,11 +145,11 @@ export default function Services() {
                   <div style={{ marginTop: 'auto', display: 'flex' }}>
                     {srv.title === '3D Printing Solutions' ? (
                       <a href="https://robosolution-3d-printing.vercel.app/" target="_blank" rel="noreferrer" className="srv-link">
-                        Visit 3D Printing Website →
+                        Visit 3D Printing Website <ArrowRight size={16} />
                       </a>
                     ) : srv.title === 'Technical Workshops' ? (
                       <a href="https://robosolution-workshop.vercel.app/" target="_blank" rel="noreferrer" className="srv-link">
-                        Book a Workshop →
+                        Book a Workshop <ArrowRight size={16} />
                       </a>
                     ) : srv.title === 'Smart Business Card Services' ? (
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
@@ -156,12 +157,12 @@ export default function Services() {
                           Open Live Demo Card ↗
                         </a>
                         <Link to={`/contact?type=Service&subject=${encodeURIComponent(srv.title)}`} className="srv-link">
-                          Inquire About Service →
+                          Inquire About Service <ArrowRight size={16} />
                         </Link>
                       </div>
                     ) : (
                       <Link to={`/contact?type=Service&subject=${encodeURIComponent(srv.title)}`} className="srv-link">
-                        Inquire About Service →
+                        Inquire About Service <ArrowRight size={16} />
                       </Link>
                     )}
                   </div>

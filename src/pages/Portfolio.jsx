@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import AnimatedPage from '../components/AnimatedPage';
 import Reveal from '../components/Reveal';
 import useImageDominantColor from '../hooks/useImageDominantColor';
+import { ArrowRight } from '../components/Icons';
 
 function ProjectGridCard({ proj, i, setSelectedProject }) {
   const { color, isTransparent } = useImageDominantColor(proj.image);
@@ -71,7 +72,7 @@ function ProjectGridCard({ proj, i, setSelectedProject }) {
               className="proj-link" 
               style={{ background: 'transparent', cursor: 'pointer' }}
             >
-              View Details →
+              View Details <ArrowRight size={16} />
             </button>
             {proj.link && (
               <a href={proj.link} target="_blank" rel="noreferrer" className="proj-link" style={{ borderColor: 'var(--accent)', color: 'var(--accent)' }}>
@@ -264,11 +265,11 @@ export default function Portfolio() {
                 <div style={{ marginTop: 'auto', display: 'flex', flexDirection: 'column', gap: '1rem', borderTop: '1px solid var(--border)', paddingTop: '1.5rem' }}>
                   {selectedProject.link ? (
                     <a href={selectedProject.link} target="_blank" rel="noreferrer" style={{ display: 'flex', alignItems: 'center', gap: 12, color: 'var(--accent)', fontSize: '.85rem', fontWeight: 500, textDecoration: 'none' }}>
-                      <span style={{ padding: 8, background: 'rgba(232,255,71,0.08)', borderRadius: 8, color: 'var(--accent)' }}>🔗</span> Launch Live Project →
+                      <span style={{ padding: 8, background: 'rgba(232,255,71,0.08)', borderRadius: 8, color: 'var(--accent)' }}>🔗</span> Launch Live Project <ArrowRight size={16} />
                     </a>
                   ) : (
                     <Link to={`/contact?type=Project&subject=${encodeURIComponent(selectedProject.title)}`} onClick={() => setSelectedProject(null)} style={{ display: 'flex', alignItems: 'center', gap: 12, color: 'var(--white)', fontSize: '.85rem', fontWeight: 500, textDecoration: 'none' }}>
-                      <span style={{ padding: 8, background: 'rgba(255,255,255,0.08)', borderRadius: 8, color: 'var(--white)' }}>✉</span> Request Similar Project →
+                      <span style={{ padding: 8, background: 'rgba(255,255,255,0.08)', borderRadius: 8, color: 'var(--white)' }}>✉</span> Request Similar Project <ArrowRight size={16} />
                     </Link>
                   )}
                 </div>

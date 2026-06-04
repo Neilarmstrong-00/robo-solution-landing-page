@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useLocation, Link } from 'react-router-dom';
 import AnimatedPage from '../components/AnimatedPage';
 import Reveal from '../components/Reveal';
+import { ArrowRight } from '../components/Icons';
 
 export default function Contact() {
   const [activeFaq, setActiveFaq] = useState(0);
@@ -130,7 +131,7 @@ export default function Contact() {
                   We have received your message and will get back to you within 24 hours.
                 </p>
                 <Link to="/" className="hero-btn-prim" style={{ width: '100%', maxWidth: '280px', justifyContent: 'center', height: '50px' }}>
-                  Back to Home →
+                  Back to Home <ArrowRight size={16} />
                 </Link>
               </div>
             ) : (
@@ -220,7 +221,7 @@ export default function Contact() {
                 type="submit" 
                 style={{ background: isSent ? 'var(--accent)' : 'var(--white)' }}
               >
-                <span>{isSubmitting ? 'Sending...' : isSent ? 'Message Sent! ✓' : 'Send Message →'}</span>
+                <span>{isSubmitting ? 'Sending...' : isSent ? 'Message Sent! ✓' : 'Send Message <ArrowRight size={16} />'}</span>
               </button>
               </form>
             )}
@@ -239,7 +240,7 @@ export default function Contact() {
             <Reveal direction="left">
               <p>Can't find your answer? Send us a message and we'll respond within 24 hours.</p>
               <button className="hero-btn-prim" onClick={() => document.getElementById('contact').scrollIntoView({behavior:'smooth'})}>
-                Contact Us →
+                Contact Us <ArrowRight size={16} />
               </button>
             </Reveal>
           </div>

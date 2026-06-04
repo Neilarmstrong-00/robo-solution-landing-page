@@ -3,6 +3,7 @@ import { useRef, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import AnimatedPage from '../components/AnimatedPage';
 import Reveal from '../components/Reveal';
+import { ArrowRight } from '../components/Icons';
 
 export default function About() {
   const [selectedMember, setSelectedMember] = useState(null);
@@ -77,7 +78,7 @@ export default function About() {
                 Robo Solutions is a Maharashtra-based engineering consultancy building the infrastructure of tomorrow. We connect IoT sensors, AI intelligence, and precision hardware to solve real problems in fields and factories.<br/><br/>
                 Founded by engineers who build with their hands, we bring a rare combination of software intelligence and mechanical craftsmanship to every project.
               </p>
-              <Link to="/contact" className="about-cta">Work With Us →</Link>
+              <Link to="/contact" className="about-cta">Work With Us <ArrowRight size={16} /></Link>
             </Reveal>
           </div>
           <div>
@@ -162,7 +163,7 @@ export default function About() {
                     <div style={{ fontSize: '.68rem', fontWeight: 500, letterSpacing: '.12em', textTransform: 'uppercase', color: 'var(--muted)', marginBottom: '.4rem' }}>{member.role}</div>
                     <div style={{ fontFamily: 'var(--font-h)', fontWeight: 700, fontSize: '1.05rem', letterSpacing: '-.01em', marginBottom: '.75rem', color: 'var(--white)' }}>{member.name}</div>
                     <p style={{ fontSize: '.82rem', fontWeight: 300, color: 'var(--muted2)', lineHeight: 1.6 }}>{member.desc}</p>
-                    <div style={{ marginTop: '1rem', fontSize: '.75rem', color: 'var(--accent)', fontWeight: 500 }}>View Profile →</div>
+                    <div style={{ marginTop: '1rem', fontSize: '.75rem', color: 'var(--accent)', fontWeight: 500 }}>View Profile <ArrowRight size={16} /></div>
                   </div>
                 </motion.div>
               ))}
@@ -266,7 +267,7 @@ export default function About() {
                       <span style={{ padding: selectedMember.name === 'Nilove Mandal' ? 4 : 8, background: 'rgba(232,255,71,0.08)', borderRadius: 8, color: 'var(--accent)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                         {selectedMember.name === 'Nilove Mandal' ? <img src="/favicon.png" alt="Favicon" style={{ width: 24, height: 24, objectFit: 'contain' }} /> : '🔗'}
                       </span> 
-                      View Personal Portfolio →
+                      View Personal Portfolio <ArrowRight size={16} />
                     </a>
                   )}
                 </div>

@@ -195,7 +195,7 @@ export default function Portfolio() {
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
               onClick={(e) => e.stopPropagation()}
-              style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 24, width: '100%', maxWidth: 900, overflow: 'hidden', display: 'flex', flexDirection: window.innerWidth < 768 ? 'column' : 'row' }}
+              style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 24, width: '100%', maxWidth: 900, maxHeight: '90vh', overflowY: 'auto', overflowX: 'hidden', display: 'flex', flexDirection: window.innerWidth < 768 ? 'column' : 'row' }}
             >
               <div style={{ flex: '1.2', minHeight: 300, background: '#000', position: 'relative', overflow: 'hidden' }}>
                 {!isModalTransparent && (

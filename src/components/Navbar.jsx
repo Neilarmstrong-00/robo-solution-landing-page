@@ -77,14 +77,14 @@ export default function Navbar() {
       </div>
 
       <style>{`
-        .nav-logo { height: 38px; object-fit: contain; transition: height 0.3s; }
+        .nav-logo { height: 30px; object-fit: contain; transition: height 0.3s; }
         @media(max-width: 900px) { 
           .nav-mid { display: none !important; } 
           .hidden-mobile { display: none !important; }
           .hamburger { display: flex !important; align-items: center; justify-content: center; width: 38px; height: 38px; }
         }
         @media(max-width: 768px) {
-          .nav-logo { height: 26px !important; }
+          .nav-logo { height: 22px !important; }
         }
         .nav-cta:hover { background: var(--accent) !important; transform: scale(1.02); }
         .nav-cta:hover .nav-cta-dot { background: #09090b !important; }
